@@ -1,0 +1,96 @@
+/* WRAPPER — full height and centered */
+.register-wrapper {
+  width: 100%;
+  min-height: calc(100vh - 60px); /* subtract navbar height */
+  background: #f5f6fa;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+}
+
+/* CARD STYLING */
+.register-card {
+  background: white;
+  width: 100%;
+  max-width: 420px;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  box-sizing: border-box;
+}
+
+/* Titles */
+.register-card h2 {
+  margin: 0 0 0.3rem 0;
+  font-size: 1.4rem;
+  color: #1a1a1a;
+}
+
+.register-card p {
+  margin: 0 0 1.5rem 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Inputs */
+.input-group {
+  margin-bottom: 1.1rem;
+}
+
+.input-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  font-size: 0.9rem;
+}
+
+/* Button */
+.register-card button {
+  width: 100%;
+  background:  #325bb3;
+  border: none;
+  color: white;
+  padding: 12px;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.register-card button:hover {
+  background:   #1d3364;
+}
+
+/* BOTTOM ALERT FIX (Always centered) */
+.bottom-alert {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 400px;
+  z-index: 3000;
+}
+
+/* MOBILE FIXES */
+@media (max-width: 480px) {
+  .register-card {
+    padding: 1.4rem;
+    max-width: 95%;
+  }
+
+  .register-wrapper {
+    padding-top: 1rem;
+  }
+}

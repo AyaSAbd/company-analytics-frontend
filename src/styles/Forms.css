@@ -1,0 +1,539 @@
+/*******************************************************
+   FORM PAGE – COMPLETELY SELF-CONTAINED STYLES
+********************************************************/
+
+/* ▸ Colors (local, not global) */
+.form-container,
+.add-question-panel {
+  --fp-primary: #325bb3;
+  --fp-primary-dark: #1e3a8a;
+  --fp-accent: #325bb3;
+  --fp-accent-dark: #1e3a8a;
+  --fp-danger: #d9534f;
+  --fp-danger-dark: #b52b27;
+  --fp-bg-light: #f8f9fa;
+  --fp-bg-hover: #eef2ff;
+  --fp-pill-bg: #eef2ff;
+  --fp-border: #d1d5db;
+  --fp-text-main: #202124;
+  --fp-text-light: #64748b;
+}
+
+/*******************************************************
+   MAIN FORM CONTAINER
+********************************************************/
+
+.form-container {
+  max-width: 760px;
+  margin: 3rem auto;
+  background: #fff;
+  padding: 2.5rem;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  font-family: "Google Sans", "Roboto", sans-serif;
+}
+
+.form-header {
+  border-left: 6px solid var(--fp-primary);
+  padding-left: 1rem;
+  margin-bottom: 2rem;
+}
+
+.form-header h2 {
+  color: var(--fp-text-main);
+  margin-bottom: 0.2rem;
+}
+
+.form-header p {
+  color: #5f6368;
+}
+
+/*******************************************************
+   QUESTION BLOCK
+********************************************************/
+
+.question-block {
+  background: var(--fp-bg-light);
+  border-radius: 10px;
+  padding: 1.2rem 1.4rem;
+  transition: 0.2s ease;
+}
+
+.question-block:hover {
+  background: var(--fp-bg-hover);
+}
+
+.question-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
+
+/*******************************************************
+   FIXED RESPONSIVE TRASH ICON (NEW)
+********************************************************/
+
+.trash-icon {
+  width: 18px;                 /* fixed, consistent size */
+  height: 18px;
+  color: var(--fp-danger);
+  cursor: pointer;
+  flex-shrink: 0;              /* prevents resizing */
+  transition: transform 0.15s ease, color 0.2s ease;
+}
+
+.trash-icon:hover {
+  color: var(--fp-danger-dark);
+  transform: scale(1.15);
+}
+
+@media (min-width: 1400px) {
+  .trash-icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.helper-text {
+  font-size: 0.85rem;
+  color: var(--fp-text-light);
+  margin-bottom: 0.6rem;
+}
+
+/*******************************************************
+   INPUT FIELDS (Scoped!)
+********************************************************/
+
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="number"],
+.form-container textarea,
+.form-container select {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #dadce0;
+  padding: 0.55rem 0.25rem;
+  font-size: 1rem;
+  background: transparent;
+  outline: none;
+  transition: 0.2s;
+}
+
+.form-container input:focus,
+.form-container textarea:focus,
+.form-container select:focus {
+  border-bottom-color: var(--fp-primary);
+}
+
+/*******************************************************
+   OPTION GROUPS
+********************************************************/
+
+.option-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-top: 0.4rem;
+}
+
+.option-item {
+  position: relative;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding-left: 28px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.option-item input {
+  position: absolute;
+  opacity: 0;
+}
+
+/* Radio */
+.custom-radio {
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  border: 2px solid var(--fp-border);
+  position: absolute;
+  left: 0;
+  transition: 0.2s;
+}
+
+.option-item input:checked ~ .custom-radio {
+  background: radial-gradient(circle, var(--fp-primary) 55%, white 60%);
+  border-color: var(--fp-primary);
+}
+
+/* Checkbox */
+.custom-checkbox {
+  width: 19px;
+  height: 19px;
+  border-radius: 4px;
+  border: 2px solid var(--fp-border);
+  position: absolute;
+  left: 0;
+  background: white;
+  transition: 0.2s;
+}
+
+.option-item input:checked ~ .custom-checkbox {
+  background: var(--fp-primary);
+  border-color: var(--fp-primary);
+}
+
+.option-item input:checked ~ .custom-checkbox::after {
+  content: "✔";
+  color: white;
+  position: absolute;
+  font-size: 13px;
+  left: 3px;
+  top: -1px;
+}
+
+.option-label {
+  color: #39475a;
+}
+
+/*******************************************************
+   SECTION TITLES
+********************************************************/
+
+.form-container h3 {
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  color: var(--fp-primary);
+  border-left: 4px solid var(--fp-primary);
+  padding-left: 0.6rem;
+}
+
+/*******************************************************
+   SUBMIT BUTTON
+********************************************************/
+
+.form-submit-btn {
+  background: var(--fp-primary);
+  padding: 0.75rem 1.6rem;
+  border-radius: 10px;
+  font-weight: 600;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  align-self: flex-end;
+  transition: 0.2s;
+}
+
+.form-submit-btn:hover {
+  background: var(--fp-primary-dark);
+}
+
+/*******************************************************
+   ADD QUESTION PANEL
+********************************************************/
+
+.add-question-panel {
+  margin-top: 2rem;
+  padding: 1.8rem;
+  background: white;
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  animation: fadeIn 0.25s ease;
+}
+
+.add-question-panel h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--fp-text-main);
+  margin-bottom: 1rem;
+}
+
+.add-q-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.add-q-field {
+  flex: 1;
+}
+
+.add-q-field.small {
+  max-width: 140px;
+}
+
+.add-q-field input,
+.add-q-field textarea,
+.add-q-field select {
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  padding: 0.65rem;
+  font-size: 0.95rem;
+  background: #fdfdfd;
+  transition: 0.2s;
+}
+
+.add-q-field input:focus,
+.add-q-field textarea:focus,
+.add-q-field select:focus {
+  border-color: var(--fp-primary);
+  box-shadow: 0 0 0 3px rgba(50,91,179,0.2);
+}
+
+/*******************************************************
+   OPTION ADD UI (MODERN)
+********************************************************/
+
+.option-add-row {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  margin-top: 0.4rem;
+}
+
+.add-option-btn {
+  padding: 0.55rem 1rem;
+  background: var(--fp-primary);
+  border-radius: 10px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: 0.2s;
+}
+
+.add-option-btn:hover {
+  background: var(--fp-primary-dark);
+}
+
+.options-preview {
+  list-style: none;
+  margin-top: 0.9rem;
+  padding: 0;
+}
+
+.options-preview li {
+  background: var(--fp-pill-bg);
+  padding: 0.55rem 0.8rem;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+/* Nice delete icon for option pills */
+.remove-option-btn {
+  background: transparent;
+  border: none;
+  color: #dc2626;
+  font-size: 0.95rem;
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: 6px;
+  transition: 0.15s ease;
+  display: flex;
+  align-items: center;
+}
+
+.remove-option-btn:hover {
+  background: rgba(220, 38, 38, 0.12);
+  color: #b91c1c;
+  transform: scale(1.08);
+}
+
+.closed-info {
+  background: #f3f4f6;
+  border-radius: 8px;
+  padding: 0.6rem;
+  color: #4b5563;
+}
+
+/*******************************************************
+   CONTROLS
+********************************************************/
+
+.add-btn {
+  background: var(--fp-accent);
+  padding: 0.6rem 1.2rem;
+  border-radius: 12px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.add-btn:hover {
+  background: var(--fp-accent-dark);
+}
+
+.add-q-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1.4rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-3px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/*******************************************************
+   RESTORED ORIGINAL PROGRESS BAR (NO OVERRIDES)
+********************************************************/
+
+.progress-floating {
+  width: 100%;
+  max-width: 700px;
+  margin: 20px auto 30px auto;
+  padding: 16px 20px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+}
+
+.progress-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: #e2e8f0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #325bb3;
+  border-radius: 10px;
+  transition: width 0.3s ease;
+}
+
+.progress-value {
+  margin-top: 6px;
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: right;
+  color: #334155;
+}
+/*******************************************************
+   RESPONSIVE ADD QUESTION PANEL (NEW)
+********************************************************/
+
+/* ── Medium screens (tablets) ───────────────────────── */
+@media (max-width: 900px) {
+
+  .add-question-panel {
+    padding: 1.4rem;
+  }
+
+  .add-q-row {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .add-q-field.small {
+    max-width: 100%;
+  }
+
+  .add-option-btn {
+    padding: 0.55rem 0.9rem;
+    font-size: 0.85rem;
+  }
+
+  .options-preview li {
+    padding: 0.5rem 0.7rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* ── Small screens (mobile) ─────────────────────────── */
+@media (max-width: 600px) {
+
+  .add-question-panel {
+    padding: 1.2rem;
+    border-radius: 10px;
+  }
+
+  /* Stack everything vertically */
+  .add-q-row {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .add-q-field {
+    width: 100%;
+  }
+
+  .add-q-field input,
+  .add-q-field select,
+  .add-q-field textarea {
+    font-size: 0.9rem;
+    padding: 0.55rem 0.6rem;
+  }
+
+  /* Options input row */
+  .option-add-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+
+  .option-add-row input[type="text"] {
+    width: 100%;
+  }
+
+  .add-option-btn {
+    width: 100%;
+    padding: 0.65rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+  }
+
+  .options-preview li {
+    padding: 0.55rem 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  /* Save button */
+  .add-q-actions {
+    margin-top: 1.2rem;
+  }
+
+  .add-q-actions .form-submit-btn {
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: 8px;
+  }
+}
+
+/* ── Extra small (very small phones) ─────────────────── */
+@media (max-width: 400px) {
+  
+  .add-question-panel {
+    padding: 1rem;
+  }
+
+  .add-q-field input,
+  .add-q-field textarea,
+  .add-q-field select {
+    font-size: 0.85rem;
+  }
+
+  .add-option-btn {
+    font-size: 0.85rem;
+  }
+
+  .options-preview li {
+    font-size: 0.85rem;
+  }
+}

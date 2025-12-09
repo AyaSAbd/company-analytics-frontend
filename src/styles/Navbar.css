@@ -1,0 +1,139 @@
+/* ===============================
+   NAVBAR — FIXED FOR MOBILE
+   =============================== */
+.navbar {
+  background-color: #1e293b;
+  color: white;
+  padding: 0.8rem 1rem;     /* smaller padding */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;             /* ensure no overflow */
+  max-width: 100%;
+  box-sizing: border-box;  /* critical */
+  overflow: hidden;        /* prevent zoom-causing overflow */
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* BRAND */
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 6px;                 /* slightly reduced */
+  font-size: 18px;          /* smaller for mobile fit */
+  font-weight: 600;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.nav-logo {
+  width: 32px;              /* smaller */
+  height: 32px;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+/* DESKTOP LINKS */
+.nav-links {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* HAMBURGER MENU */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.bar {
+  width: 24px;             /* slightly smaller */
+  height: 3px;
+  background: white;
+  border-radius: 3px;
+  transition: 0.3s ease;
+}
+
+/* Animation */
+.bar1.open {
+  transform: translateY(7px) rotate(45deg);
+}
+.bar2.open {
+  opacity: 0;
+}
+.bar3.open {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* MOBILE VIEW */
+@media (max-width: 800px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 60px;             /* smaller for tighter layout */
+    right: 0;
+    width: 100%;
+    background: #1e293b;
+    flex-direction: column;
+    padding: 1rem 0;
+    text-align: center;
+    display: none;
+    gap: 1rem;
+  }
+
+  .nav-links.open {
+    display: flex;
+    animation: slideDown 0.3s ease;
+  }
+
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+}
+/* Language Switcher */
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-right: 1rem;
+}
+
+.lang-btn {
+  border: none;
+  background: transparent;
+  color: #e5e7eb;
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 999px;
+}
+
+.lang-btn.active {
+  background: #ffffff22;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.lang-btn:hover {
+  background: #ffffff11;
+}
+
+.lang-separator {
+  color: #9ca3af;
+  font-size: 0.85rem;
+}

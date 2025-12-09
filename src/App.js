@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Welcome from "./pages/Welcome";
+import FormSelection from "./pages/FormSelection";
+import EmployeeForm from "./pages/EmployeeForm";
+import CustomerForm from "./pages/CustomerForm";
+import Analysis from "./pages/Analysis";
+import "./styles/App.css";
+import ProfileForm from "./pages/ProfileForm";
+import RegisterCompany from "./pages/RegisterCompany";
+import QuestionnaireViewer from "./pages/QuestionnaireViewer";
+import PublicFormViewer from "./pages/PublicFormViewer";
+import ThankYou from "./pages/ThankYou";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<RegisterCompany />} />
+        <Route path="/welcome" element={<Welcome />} />
+        <Route path="/forms" element={<FormSelection />} />
+        <Route path="/forms/employee" element={<EmployeeForm />} />
+        <Route path="/forms/customer" element={<CustomerForm />} />
+        <Route path="/analysis" element={<Analysis />} />
+        <Route path="/profile-form" element={<ProfileForm />} />
+        <Route path="/forms/view/:questionnaireId" element={<QuestionnaireViewer />} />
+        <Route path="/forms/public/:companyId/:questionnaireId" element={<PublicFormViewer />} />
+        <Route path="/forms/thank-you" element={<ThankYou />} />
+      </Routes>
+    </Router>
   );
 }
 
