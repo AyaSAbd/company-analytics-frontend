@@ -1,39 +1,33 @@
-/* ===============================
-   NAVBAR — FIXED FOR MOBILE
-   =============================== */
 .navbar {
   background-color: #1e293b;
   color: white;
-  padding: 0.8rem 1rem;     /* smaller padding */
+  padding: 0.8rem 1rem;     
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;             /* ensure no overflow */
+  width: 100%;             
   max-width: 100%;
-  box-sizing: border-box;  /* critical */
-  overflow: hidden;        /* prevent zoom-causing overflow */
+  box-sizing: border-box;  
+  overflow: hidden;        
   border-bottom: 1px solid #e5e7eb;
 }
 
-/* BRAND */
 .nav-brand {
   display: flex;
   align-items: center;
-  gap: 6px;                 /* slightly reduced */
-  font-size: 18px;          /* smaller for mobile fit */
+  gap: 6px;                 
+  font-size: 18px;          
   font-weight: 600;
   overflow: hidden;
   white-space: nowrap;
 }
 
 .nav-logo {
-  width: 32px;              /* smaller */
+  width: 32px;             
   height: 32px;
   object-fit: contain;
   border-radius: 12px;
 }
-
-/* DESKTOP LINKS */
 .nav-links {
   display: flex;
   gap: 1.2rem;
@@ -48,8 +42,6 @@
 .nav-links a:hover {
   text-decoration: underline;
 }
-
-/* HAMBURGER MENU */
 .nav-toggle {
   display: none;
   flex-direction: column;
@@ -58,14 +50,13 @@
 }
 
 .bar {
-  width: 24px;             /* slightly smaller */
+  width: 24px;             
   height: 3px;
   background: white;
   border-radius: 3px;
   transition: 0.3s ease;
 }
 
-/* Animation */
 .bar1.open {
   transform: translateY(7px) rotate(45deg);
 }
@@ -76,7 +67,6 @@
   transform: translateY(-7px) rotate(-45deg);
 }
 
-/* MOBILE VIEW */
 @media (max-width: 800px) {
   .nav-toggle {
     display: flex;
@@ -84,7 +74,7 @@
 
   .nav-links {
     position: absolute;
-    top: 60px;             /* smaller for tighter layout */
+    top: 60px;             
     right: 0;
     width: 100%;
     background: #1e293b;
@@ -105,7 +95,6 @@
     to   { opacity: 1; transform: translateY(0); }
   }
 }
-/* Language Switcher */
 .lang-switch {
   display: flex;
   align-items: center;

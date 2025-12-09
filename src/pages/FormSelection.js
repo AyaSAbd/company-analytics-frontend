@@ -33,7 +33,7 @@ export default function FormSelection() {
   // TRIGGER N8N WORKFLOW
   // --------------------------------------------------
   const triggerN8nWorkflow = (companyId) => {
-    const webhookUrl = "YOUR_N8N_TEST_WEBHOOK_URL_HERE";
+    const webhookUrl = "YOUR_N8N_TEST_WEBHOOK_URL_HERE"; //replace with your n8n webhook URL
 
     const dataToSend = {
       p_company_id: companyId,

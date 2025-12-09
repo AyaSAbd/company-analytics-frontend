@@ -1,7 +1,6 @@
-/* WRAPPER — full height and centered */
 .register-wrapper {
   width: 100%;
-  min-height: calc(100vh - 60px); /* subtract navbar height */
+  min-height: calc(100vh - 60px); 
   background: #f5f6fa;
   display: flex;
   justify-content: center;
@@ -9,8 +8,6 @@
   padding: 2rem 1rem;
   box-sizing: border-box;
 }
-
-/* CARD STYLING */
 .register-card {
   background: white;
   width: 100%;
@@ -20,8 +17,6 @@
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   box-sizing: border-box;
 }
-
-/* Titles */
 .register-card h2 {
   margin: 0 0 0.3rem 0;
   font-size: 1.4rem;
@@ -34,7 +29,6 @@
   color: #555;
 }
 
-/* Inputs */
 .input-group {
   margin-bottom: 1.1rem;
 }
@@ -54,7 +48,6 @@
   font-size: 0.9rem;
 }
 
-/* Button */
 .register-card button {
   width: 100%;
   background:  #325bb3;
@@ -72,7 +65,6 @@
   background:   #1d3364;
 }
 
-/* BOTTOM ALERT FIX (Always centered) */
 .bottom-alert {
   position: fixed;
   bottom: 20px;
@@ -83,7 +75,6 @@
   z-index: 3000;
 }
 
-/* MOBILE FIXES */
 @media (max-width: 480px) {
   .register-card {
     padding: 1.4rem;

@@ -4,40 +4,6 @@ body {
   background-color: #f7f8fa;
 }
 
-/* .navbar {
-  background-color: #1e293b;
-  color: white;
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid #e5e7eb;
-}
-.nav-brand {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 20px;
-  font-weight: 600;
-
-}
-
-.nav-logo {
-  width: 36px;
-  height: 36px;
-  object-fit: contain;
-  border-radius: 15px
-}
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  margin-left: 1rem;
-}
-
-.nav-links a:hover {
-  text-decoration: underline;
-} */
-
 .welcome-page, .form-selection, .analysis-page {
   text-align: center;
   padding: 2rem;

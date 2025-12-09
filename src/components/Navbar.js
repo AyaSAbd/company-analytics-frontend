@@ -9,7 +9,9 @@ export default function Navbar() {
   const location = useLocation();
 
   const companyName = localStorage.getItem("company_name");
-  const isPublic = location.pathname.startsWith("/forms/public");
+const isPublic =
+  location.pathname.startsWith("/forms/public") ||
+  location.pathname === "/forms/thank-you";
 
   return (
     <nav className="navbar">

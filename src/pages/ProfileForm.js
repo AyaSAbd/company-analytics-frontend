@@ -1,7 +1,3 @@
-// -------------------------------------------------------
-// ProfileForm.js — with rating + "Other" + text-only numericals
-// -------------------------------------------------------
-
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/Forms.css";
@@ -108,7 +104,7 @@ export default function ProfileForm() {
   }, [formData, questionnaire]);
 
   // =============================
-  // RENDER INPUT — TRANSLATED
+  // RENDER INPUT 
   // =============================
   const renderInput = (q) => {
     const format = (q.format_hint || "").toLowerCase();

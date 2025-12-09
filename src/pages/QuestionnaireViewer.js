@@ -205,7 +205,7 @@ export default function QuestionnaireViewer() {
     }
   };
 
-  // SUPPRIMER UNE QUESTION (sans popup)
+  // SUPPRIMER UNE QUESTION
   const handleDeleteQuestion = async (questionId) => {
     try {
       await fetch(DELETE_URL, {

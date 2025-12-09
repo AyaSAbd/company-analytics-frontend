@@ -19,7 +19,7 @@ import "../styles/Analysis.css";
 export default function Analysis() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [processing, setProcessing] = useState(false); // shows full-page loader when generating analysis
+  const [processing, setProcessing] = useState(false); 
 
 
   const companyName = localStorage.getItem("company_name") || "Entreprise";
@@ -86,12 +86,6 @@ export default function Analysis() {
   }, []);
 
   if (loading) return <p className="analysis-loading">Chargement...</p>;
-  // if (!data || !data.summaryJson || !data.recJson)
-  //   return (
-  //     <p className="analysis-loading">
-  //       Aucune analyse structurée disponible pour le moment.
-  //     </p>
-  //   );
 
 const createdDate = data?.created_at
   ? new Date(data.created_at).toLocaleDateString()
@@ -285,7 +279,7 @@ const createdDate = data?.created_at
     pdf.save(`Rapport_${companyName}.pdf`);
   };
 
-  // -----------------------------------------
+// -----------------------------------------
 // TRIGGER N8N WORKFLOW AND RELOAD ANALYSIS
 // -----------------------------------------
 const triggerN8nWorkflow = async () => {
@@ -332,10 +326,6 @@ const triggerN8nWorkflow = async () => {
   }
 };
 
-
-  // -----------------------------------------
-  // SMALL REUSABLE COMPONENTS (SCREEN)
-  // -----------------------------------------
   const Pill = ({ children }) => <span className="metric-tag">{children}</span>;
 
   const FindingCard = ({ item }) => (
@@ -441,17 +431,8 @@ const loaderStyles = {
   },
   
 };
-// const styleSheet = document.styleSheets[0];
-// styleSheet.insertRule(`
-//   @keyframes spin {
-//     0% { transform: rotate(0deg); }
-//     100% { transform: rotate(360deg); }
-//   }
-// `, styleSheet.cssRules.length);
-
-
   // -----------------------------------------
-  // SCREEN LAYOUT – OLD DESIGN (cards)
+  // SCREEN LAYOUT 
   // -----------------------------------------
  return (
   <div className="analysis-page">
